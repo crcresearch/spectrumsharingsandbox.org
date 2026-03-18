@@ -1,55 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>CIRC: Spectrum Sharing Sandbox (S3)</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">CIRC: S3</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page content-->
-        <div class="container">
-            <div class="text-center mt-5">
-                <h1>CIRC: Spectrum Sharing Sandbox (S3)</h1>
-                <h2>A 6 GHz and CBRS Data Platform for Advancing Spectrum Coexistence.</h2>
-                <div class="text-start mt-5">
-                <p class="lead">Spectrum Sharing Sandbox (S3) will provide the CISE community with a unique platform: CBRS and Wi-Fi 6E deployed in multiple indoor and outdoor locations at the University of Notre Dame in South Bend.</p>
-                <p class="lead">S3 will leverage commercial equipment, with special access to base-station and access point parameters such as channel lists for CBRS and sensing thresholds for Wi-Fi, through collaborations with industry partners.</p>
-                <p class="lead">User devices will be smartphones and laptops (with Wireshark and 6 GHz Wi-Fi cards) and measurement tools will be Qualipoc, SigCap, speedtests and spectrum analyzers. All data collected on the deployment will be made available to the CISE community.</p>
-            </div>
-                <!-- <p>Bootstrap v5.2.3</p> -->
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spectrum Sharing Sandbox (S3)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-container">
+    <div class="site-brand">
+      <a href="./">
+        <div class="site-title">Spectrum Sharing Sandbox (S3)</div>
+        <div class="site-subtitle">A 6 GHz and CBRS Data Platform for Spectrum Coexistence</div>
+      </a>
+      <div class="site-affiliation">University of Notre Dame</div>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="site-container">
+    <a href="./">Home</a>
+    <a href="data-browser.html">Data Browser</a>
+    <a href="cbrs-updates.html">CBRS Updates</a>
+    <a href="6ghz-updates.html">6 GHz Updates</a>
+    <a href="publications.html">Publications</a>
+  </div>
+</nav>
+
+<main class="site-main">
+  <div class="site-container">
+
+    <div class="page-header">
+      <h1>Spectrum Sharing Sandbox</h1>
+      <p class="page-lead">
+        PI: Monisha Ghosh; Co-PIs: Nick Laneman, Jane Livingston &mdash; University of Notre Dame
+      </p>
+    </div>
+
+    <section>
+      <h2>About the Project</h2>
+      <p>
+        The Spectrum Sharing Sandbox (S3) is a first-of-its-kind experimental platform
+        designed to gather real-world data on spectrum coexistence within the newly
+        introduced shared spectrum bands: the 3.55&ndash;3.7 GHz Citizens Broadband Radio
+        Service (CBRS) and the 5.925&ndash;7.125 GHz unlicensed 6 GHz band.
+      </p>
+      <p>
+        The rapid deployment of private 4G/5G networks in the CBRS band and Wi-Fi 6E in
+        the 6 GHz band has far outpaced the availability of experimental research data.
+        Prior to the authorization of services in these bands, federal incumbents (e.g.,
+        Navy radars in CBRS) and the lack of Software Defined Radios operating at 6 GHz
+        severely limited experimental work. Consequently, many critical coexistence and
+        performance issues remain unaddressed.
+      </p>
+      <p>
+        S3 provides the CISE community with a flexible platform to devise coexistence
+        experiments and collect measurement data. This data can be used to train AI/ML
+        models, inform FCC policymaking, and develop next-generation shared spectrum
+        systems.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Challenges</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>CBRS (3.55&ndash;3.7 GHz)</h3>
+          <p>
+            The CBRS band is a low-power allocation sandwiched between two high-power
+            allocations&mdash;including the 3.7&ndash;3.98 GHz C-band&mdash;without any
+            guard bands. Deployed systems employ Time-Division-Duplex (TDD) operations
+            with customizable uplink/downlink splits, creating severe adjacent channel
+            coexistence issues when different operators occupy neighboring bands.
+          </p>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        <div class="card">
+          <h3>6 GHz (5.925&ndash;7.125 GHz)</h3>
+          <p>
+            The 6 GHz band operates under a complex multi-tiered power regime&mdash;Low-Power
+            Indoor (LPI) devices, Standard-Power (SP) devices managed by an Automatic
+            Frequency Control (AFC) database, and future Very Low-Power (VLP) rules. The
+            introduction of contention-based protocols (Listen-Before-Talk) and 5G NR-U
+            create unprecedented heterogeneous coexistence problems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Infrastructure Overview</h2>
+      <p>
+        S3 relies on a hybrid design leveraging commercial equipment, programmable devices,
+        and already-deployed networks to replicate realistic environments rather than purely
+        isolated lab conditions. The platform is deployed across the Notre Dame campus:
+      </p>
+
+      <h3>University of Notre Dame</h3>
+      <ul>
+        <li>Four outdoor rooftop CBRS nodes (Legends, Fitzpatrick, Rockne, Library)</li>
+        <li>Thirteen indoor CBRS nodes installed at the Fitzpatrick-Cushing Hall of Engineering, with 6 operating as a neutral host to select MNOs.</li>
+        <li>Enterprise Wi-Fi 6E access points deployed alongside legacy 5 GHz APs at the Notre Dame stadium and select buildings</li>
+        <li>NI X410 SDRs running Open-Air-Interface (OAI) 5G NR-U stack</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Measurement Approach</h2>
+      <p>
+        Unlike testbeds that rely strictly on low-level I/Q data or basic spectrum
+        measurements, S3 focuses on highly granular system-level parameters:
+      </p>
+      <dl class="spec-list">
+        <dt>System-Level Metrics</dt>
+        <dd>SSID/BSSID for Wi-Fi networks; PCI/RSRP for CBRS/cellular networks</dd>
+
+        <dt>Smartphone Instrumentation</dt>
+        <dd>QualiPoc for Layer 1/2 data (MIMO streams, channel rank, RRC messaging); SigCap for spatial granularity</dd>
+
+        <dt>Channel State Information</dt>
+        <dd>Intel 6 GHz Wi-Fi cards extracting detailed CSI and MIMO channel impulse responses</dd>
+
+        <dt>Targeted I/Q Captures</dt>
+        <dd>SDRs used judiciously for specific interference investigations (e.g., different CBRS uplink/downlink splits)</dd>
+      </dl>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-container">
+    <div>
+      <strong>Spectrum Sharing Sandbox (S3)</strong><br>
+      University of Notre Dame
+    </div>
+    <div class="footer-support">
+      Supported by NSF Award <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2346413" target="_blank" rel="noopener">#2346413</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
