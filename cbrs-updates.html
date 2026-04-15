@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CBRS Deployment Updates &mdash; S3</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .status-online::before,
+    .status-attn::before,
+    .status-disabled::before,
+    .status-offline::before {
+      display: inline-block;
+      content: "";
+      vertical-align: -.125em;
+      background-repeat: no-repeat;
+      background-size: 1rem 1rem;
+      width: 1rem;
+      height: 1rem;
+      margin-right: .2rem;
+
+    }
+    .status-online::before {
+      background-image: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='%230F0' class='bi bi-circle-fill' xmlns='http://www.w3.org/2000/svg'><circle cx='8' cy='8' r='8'/></svg>");
+    }
+    .status-attn::before {
+      background-image: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='%23FF0' class='bi bi-exclamation-circle-fill' xmlns='http://www.w3.org/2000/svg'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2'/></svg>");
+    }
+    .status-disabled::before {
+      background-image: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='%23F00' class='bi bi-circle-fill' xmlns='http://www.w3.org/2000/svg'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z'/></svg>");
+    }
+    .status-offline::before {
+      background-image: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='%23F00' class='bi bi-dash-circle-fill' xmlns='http://www.w3.org/2000/svg'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z'/></svg>");
+    }
+  </style>
 </head>
 <body>
 
@@ -41,11 +69,191 @@
       </p>
     </div>
 
-    <div class="callout">
+    <section>
+      <h2>Deployment Summary</h2>
       <p>
-        <strong>Coming Soon:</strong> We are currently iterating on the deployment updates and tracking functionality. Check back later for detailed status updates on our CBRS hardware installations and experiments.
+        The CBRS deployment consisting of Celona AP 20 deployed indoors and AP 21 deployed
+        outdoors. The AP-20 has the flexibility to be configured on either 4G with up to
+        two 20 MHz aggregated channels or a single 20/40 MHz 5G channel, while the AP-21 
+        can only operate with a single 20/40 MHz 5G channel. The following map denotes the
+        CBDS locations.
       </p>
-    </div>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Ej-WOHAXML1RrmGWf6FfF6cx1xyH6pY&ehbc=2E312F&noprof=1" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <h2>Deployment Table</h2>
+      <p>
+        Last update on <span id="cbrs-update"></span>
+      </p>
+      <table class="table" id="cbrs-table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">CBSD Model</th>
+            <th scope="col">Neutral Host?</th>
+            <th scope="col">Mode</th>
+            <th scope="col">Channels<br>([PCI] - Freq - BW)</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">101</th>
+            <td>Fitzpatrick-Cushing 1st Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">H106</th>
+            <td>Fitzpatrick-Cushing 1st Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">116</th>
+            <td>Fitzpatrick-Cushing 1st Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">118C</th>
+            <td>Fitzpatrick-Cushing 1st Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">125</th>
+            <td>Fitzpatrick-Cushing 1st Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">149</th>
+            <td>Fitzpatrick-Cushing 1st Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">249</th>
+            <td>Fitzpatrick-Cushing 2nd Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">257</th>
+            <td>Fitzpatrick-Cushing 2nd Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">H275</th>
+            <td>Fitzpatrick-Cushing 2nd Floor</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">HB-05</th>
+            <td>Fitzpatrick-Cushing Basement Level</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">HB-18B</th>
+            <td>Fitzpatrick-Cushing Basement Level</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">HB-21</th>
+            <td>Fitzpatrick-Cushing Basement Level</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">HB-28</th>
+            <td>Fitzpatrick-Cushing Basement Level</td>
+            <td>AP 20</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Fitz-Cush</th>
+            <td>Fitzpatrick-Cushing Hall Outdoor</td>
+            <td>AP 21</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Legends</th>
+            <td>Legends Restaurant Outdoor</td>
+            <td>AP 21</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Library</th>
+            <td>Hesburgh Library Outdoor</td>
+            <td>AP 21</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Rockne</th>
+            <td>Rockne Memorial Outdoor</td>
+            <td>AP 21</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
   </div>
 </main>
