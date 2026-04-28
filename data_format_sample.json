@@ -1,0 +1,29 @@
+[
+    {
+	"title": "Neutral Host CBRS Indoor Deployment",
+	"desc": "Indoor measuremenst of Neutral Host deployment at the Fitzpatrick-Cushing building at Notre Dame",
+	"full_data_desc": "// Describe methodology, goals, additional data labels, etc",
+    "link": "https://github.com/crcresearch/spectrumsharingsandbox.org/tree/master/data/SOMEFILE.zip",
+	"date_ranges": [ // Multi date ranges selector
+		{
+			"start": "2025-08-12 12:34:56-0400",
+			"end": "2025-08-12 12:45:56-0400"
+		},
+		{
+			"start": "2025-08-13 23:34:56-0400",
+			"end": "2025-08-14 00:55:56-0400"
+		}
+	],
+	"data_types": [ // Multi-select check box of defined types, see https://docs.google.com/document/d/1kaWl6CP__qG9bYx9XBZIyknRj2Wn7_mbsYkB6A1RHX8/edit?tab=t.0
+		"QP_lte_pdsch_percarrier",
+		"QP_app_capacity",
+		"sigcap_wifi"
+	],
+	"tags": [ // Freeform tagging
+		"indoor",
+		"cbrs",
+		"5G",
+		"4G"
+	]
+    }
+]

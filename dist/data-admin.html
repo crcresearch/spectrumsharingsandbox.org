@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Data Admin &mdash; S3</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-container">
+    <div class="site-brand">
+      <a href="./">
+        <div class="site-title">Spectrum Sharing Sandbox (S3)</div>
+        <div class="site-subtitle">A 6 GHz and CBRS Data Platform for Spectrum Coexistence</div>
+      </a>
+      <div class="site-affiliation">University of Notre Dame</div>
+    </div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="site-container">
+    <a href="./">Home</a>
+    <a href="data-browser.html">Data Browser</a>
+    <a href="cbrs-updates.html">CBRS Updates</a>
+    <a href="6ghz-updates.html">6 GHz Updates</a>
+    <a href="publications.html">Publications</a>
+  </div>
+</nav>
+
+<main class="site-main">
+  <div class="site-container">
+
+    <div class="page-header">
+      <h1>Data Admin</h1>
+      <p class="page-lead">
+        Build and edit the dataset configuration. Changes live in your browser only &mdash; use <strong>Download Configuration</strong> to export a replacement JSON file for the repo.
+      </p>
+    </div>
+
+    <div class="callout admin-notice">
+      <p>
+        <strong>Unlisted tool.</strong> This page is not linked from the navigation. Edits made here are not saved to the server &mdash; they exist only in this tab until you download the JSON.
+      </p>
+    </div>
+
+    <div id="data-admin" data-src="data/datasets.json">
+
+      <div class="admin-toolbar">
+        <button type="button" id="adm-add" class="btn-primary">+ Add New Data</button>
+        <button type="button" id="adm-download" class="btn-secondary">Download Configuration</button>
+        <button type="button" id="adm-reload" class="btn-link">Reload from file (discard changes)</button>
+      </div>
+
+      <div class="filter-bar data-filter-bar">
+        <div class="filter-group filter-group-grow">
+          <label for="adm-search">Search</label>
+          <input type="search" id="adm-search" placeholder="Search title, description, or tags..." autocomplete="off">
+        </div>
+
+        <div class="filter-group">
+          <label for="adm-date-start">From</label>
+          <input type="date" id="adm-date-start">
+        </div>
+
+        <div class="filter-group">
+          <label for="adm-date-end">To</label>
+          <input type="date" id="adm-date-end">
+        </div>
+
+        <div class="filter-group filter-group-actions">
+          <button type="button" id="adm-clear" class="btn-clear">Clear filters</button>
+        </div>
+      </div>
+
+      <div class="filter-multiselects">
+        <div class="filter-multi">
+          <div class="filter-multi-label">Data types</div>
+          <div id="adm-data-types" class="checkbox-group" role="group" aria-label="Data types"></div>
+        </div>
+        <div class="filter-multi">
+          <div class="filter-multi-label">Tags</div>
+          <div id="adm-tags" class="checkbox-group" role="group" aria-label="Tags"></div>
+        </div>
+      </div>
+
+      <div class="db-results-header">
+        <span id="adm-result-count" class="db-result-count">Loading datasets&hellip;</span>
+      </div>
+
+      <div id="adm-results" class="dataset-list" aria-live="polite"></div>
+
+      <div id="adm-empty" class="callout dataset-empty" hidden>
+        <p>No datasets match your current filters.</p>
+      </div>
+
+      <div id="adm-error" class="callout dataset-error" hidden>
+        <p><strong>Could not load datasets.</strong> <span id="adm-error-message"></span></p>
+      </div>
+    </div>
+
+    <!-- Edit / Add modal -->
+    <div id="adm-modal" class="modal" hidden aria-hidden="true" role="dialog" aria-labelledby="adm-modal-title">
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-dialog" role="document">
+        <div class="modal-header">
+          <h2 id="adm-modal-title" class="modal-title">Edit dataset</h2>
+          <button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>
+        </div>
+        <form id="adm-form" class="modal-body" novalidate>
+          <label class="form-field">
+            <span class="form-label">Title</span>
+            <input type="text" name="title" required>
+          </label>
+
+          <label class="form-field">
+            <span class="form-label">Short description</span>
+            <textarea name="desc" rows="2" required></textarea>
+          </label>
+
+          <label class="form-field">
+            <span class="form-label">Full description</span>
+            <textarea name="full_data_desc" rows="4" placeholder="Methodology, goals, additional data labels, etc."></textarea>
+          </label>
+
+          <label class="form-field">
+            <span class="form-label">Download link</span>
+            <input type="url" name="link" placeholder="https://github.com/..." required>
+          </label>
+
+          <fieldset class="form-field">
+            <legend class="form-label">Date ranges</legend>
+            <p class="form-help">Use the format <code>YYYY-MM-DD HH:MM:SS±HHMM</code> (e.g. <code>2025-08-12 12:34:56-0400</code>).</p>
+            <div id="adm-date-ranges" class="date-ranges"></div>
+            <button type="button" id="adm-add-range" class="btn-link">+ Add date range</button>
+          </fieldset>
+
+          <fieldset class="form-field">
+            <legend class="form-label">Data types</legend>
+            <p class="form-help">Type a value and press Enter to add. Click a chip to remove it.</p>
+            <div id="adm-form-data-types" class="chip-input" data-field="data_types"></div>
+          </fieldset>
+
+          <fieldset class="form-field">
+            <legend class="form-label">Tags</legend>
+            <p class="form-help">Freeform. Type and press Enter to add.</p>
+            <div id="adm-form-tags" class="chip-input" data-field="tags"></div>
+          </fieldset>
+
+          <div class="modal-footer">
+            <button type="button" class="btn-secondary" data-modal-close>Cancel</button>
+            <button type="submit" class="btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-container">
+    <div>
+      <strong>Spectrum Sharing Sandbox (S3)</strong><br>
+      University of Notre Dame
+    </div>
+    <div class="footer-support">
+      Supported by NSF Award <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2346413" target="_blank" rel="noopener">#2346413</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
