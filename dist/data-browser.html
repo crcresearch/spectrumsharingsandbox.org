@@ -40,10 +40,56 @@
       </p>
     </div>
 
-    <div class="callout">
-      <p>
-        <strong>Coming Soon:</strong> We are currently iterating on the data access and filtering functionality. Check back later to browse and download measurement datasets collected across S3 deployment sites.
-      </p>
+    <div id="data-browser" data-src="data/datasets.json">
+      <div class="filter-bar data-filter-bar">
+        <div class="filter-group filter-group-grow">
+          <label for="db-search">Search</label>
+          <input
+            type="search"
+            id="db-search"
+            placeholder="Search title, description, or tags..."
+            autocomplete="off">
+        </div>
+
+        <div class="filter-group">
+          <label for="db-date-start">From</label>
+          <input type="date" id="db-date-start">
+        </div>
+
+        <div class="filter-group">
+          <label for="db-date-end">To</label>
+          <input type="date" id="db-date-end">
+        </div>
+
+        <div class="filter-group filter-group-actions">
+          <button type="button" id="db-clear" class="btn-clear">Clear filters</button>
+        </div>
+      </div>
+
+      <div class="filter-multiselects">
+        <div class="filter-multi">
+          <div class="filter-multi-label">Data types</div>
+          <div id="db-data-types" class="checkbox-group" role="group" aria-label="Data types"></div>
+        </div>
+        <div class="filter-multi">
+          <div class="filter-multi-label">Tags</div>
+          <div id="db-tags" class="checkbox-group" role="group" aria-label="Tags"></div>
+        </div>
+      </div>
+
+      <div class="db-results-header">
+        <span id="db-result-count" class="db-result-count">Loading datasets&hellip;</span>
+      </div>
+
+      <div id="db-results" class="dataset-list" aria-live="polite"></div>
+
+      <div id="db-empty" class="callout dataset-empty" hidden>
+        <p>No datasets match your current filters.</p>
+      </div>
+
+      <div id="db-error" class="callout dataset-error" hidden>
+        <p><strong>Could not load datasets.</strong> <span id="db-error-message"></span></p>
+      </div>
     </div>
 
   </div>
