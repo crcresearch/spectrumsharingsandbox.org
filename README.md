@@ -24,6 +24,56 @@ To begin using this template, choose one of the following options to get started
 
 ## Usage
 
+### S3 Data Admin (JSON Configuration Editor)
+
+The unlisted Data Admin page is available at `/data-admin.html` (for example, `http://localhost:8080/data-admin.html` when running locally, or `https://spectrumsharingsandbox.org/data-admin.html` in production).
+
+It loads the current dataset configuration from:
+
+- `dist/data/datasets.json`
+
+Use this page to maintain the Data Browser configuration without hand-editing JSON.
+
+#### Add a new data entry
+
+1. Open `/data-admin.html`.
+2. Click `+ Add New Data`.
+3. Fill out all required fields (`Title`, `Short description`, and `Download link`).
+4. Add one or more date ranges, data types, and tags as needed.
+5. Click `Save`.
+
+#### Modify an existing data entry
+
+1. Find the entry (use search/filters if needed).
+2. Click `Edit` on that dataset card.
+3. Update fields in the modal.
+4. Click `Save`.
+
+#### Delete a data entry
+
+1. Find the entry.
+2. Click `Delete`.
+3. Confirm the deletion prompt.
+
+> Note: Add/Edit/Delete changes are stored in browser memory only for the current session. They are not saved to the server automatically.
+
+#### Export updated configuration JSON
+
+1. On `/data-admin.html`, click `Download Configuration`.
+2. This downloads a `datasets.json` file that contains your current in-browser working copy.
+
+#### Publish the updated configuration to the site
+
+1. Replace the repo file at `dist/data/datasets.json` with the downloaded `datasets.json`.
+2. Commit and push your change to `master`.
+3. Deploy `dist` to GitHub Pages so the new config is live at the site root:
+
+```bash
+git push origin "$(git subtree split --prefix dist master)":gh-pages --force
+```
+
+After deploy, the Data Browser will load the new configuration from `/data/datasets.json`.
+
 ### Basic Usage
 
 After downloading, simply edit the HTML and CSS files included with `dist` directory. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, open the `index.html` file in your web browser.
