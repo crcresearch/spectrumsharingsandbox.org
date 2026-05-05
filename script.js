@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   highlightActiveNav();
   initDataBrowser();
   initDataAdmin();
+  initCBRSUpdates();
 });
 
 function highlightActiveNav() {
@@ -619,4 +620,113 @@ function downloadConfiguration(datasets) {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+/* ========================================================================
+ * CBRS Updates
+ * ======================================================================*/
+
+const opStatusDict = {
+  0: "<span class='status-disabled'>Unknown</span>",
+  1: "<span class='status-attn'>New</span>",
+  2: "<span class='status-attn'>Pending</span>",
+  3: "<span class='status-attn'>Provisioned</span>",
+  4: "<span class='status-online'>Up</span>",
+  5: "<span class='status-offline'>Down</span>",
+  6: "<span class='status-attn'>Deployed</span>",
+}
+
+function initCBRSUpdates() {
+  const root = document.getElementById('cbrs-table');
+  if (!root) return;
+
+  const src = root.dataset.src;
+  const state = {
+    enodebs: [],
+    timestamp: ""
+  };
+
+  const els = {
+    tableRows: Array.from(root.querySelectorAll('tbody tr'), (row) => {
+      row.nameCol = row.children[0];
+      row.locCol = row.children[1];
+      row.modelCol = row.children[2];
+      row.nhCol = row.children[3];
+      row.modeCol = row.children[4];
+      row.chCol = row.children[5];
+      row.statusCol = row.children[6];
+      return row;
+    }),
+    lastUpdate: document.getElementById('cbrs-update'),
+    error: document.getElementById('cbrs-error'),
+    errorMsg: document.getElementById('cbrs-error-message'),
+  };
+  console.log(els)
+
+  const render = () => {
+    console.log(state)
+    els.lastUpdate.innerHTML = new Date(state.timestamp);
+    els.tableRows.map(row => {
+      const rowName = row.nameCol.innerText;
+      const enodeb = state.enodebs.find((element) => element.name.toUpperCase() === rowName);
+      if (enodeb) {
+        renderCBRSRow(row, enodeb);
+      }
+    });
+  };
+
+  fetch(src, { cache: 'no-cache' }).then(res => {
+    if (!res.ok) throw new Error(`HTTP ${res.status} while loading ${src}`);
+    return res.json();
+  })
+  .then(data => {
+    state.enodebs = data.enodebs;
+    state.timestamp = data.timestamp;
+    render();
+  }).catch(err => {
+    console.error(err);
+    els.lastUpdate.textContent = '';
+    els.error.hidden = false;
+    els.errorMsg.textContent = err.message;
+  });
+}
+
+
+function renderCBRSRow(row, enodeb) {
+  row.nhCol.innerHTML = `${enodeb.neutral_host_enabled ? "Yes" : "No"}`;
+  row.modeCol.innerHTML = enodeb.current_radio_technology_label;
+  const radioCount = enodeb.radios.length;
+  if (radioCount === 0) {
+    row.chCol.innerHTML = "Unknown";
+    row.statusCol.innerHTML = opStatusDict[0];
+  } else {
+    let bw = enodeb.radios[0].channel_bandwidth;
+    if (enodeb.current_radio_technology_label === "4G") {
+      bw = bw / 5
+    }
+    row.chCol.innerHTML = `[${enodeb.radios[0].pci}] ${enodeb.radios[0].frequency_dl} – ${bw}`;
+    row.statusCol.innerHTML = opStatusDict[enodeb.radios[0].op_status];
+
+    if (radioCount === 2) {
+      row.nameCol.rowSpan = 2;
+      row.nameCol.scope = "rowgroup";
+      row.locCol.rowSpan = 2;
+      row.modelCol.rowSpan = 2;
+      row.nhCol.rowSpan = 2;
+      row.modeCol.rowSpan = 2;
+
+      const tr = document.createElement("tr");
+      let bw1 = enodeb.radios[1].channel_bandwidth;
+      if (enodeb.current_radio_technology_label === "4G") {
+        bw1 = bw1 / 5
+      }
+      const tdChannel = document.createElement("td");
+      tdChannel.innerHTML = `[${enodeb.radios[1].pci}] ${enodeb.radios[1].frequency_dl} – ${bw1}`;
+      tr.appendChild(tdChannel);
+      const tdStatus = document.createElement("td");
+      tdStatus.innerHTML = opStatusDict[enodeb.radios[1].op_status];
+      tr.appendChild(tdStatus);
+      row.insertAdjacentElement("afterend", tr);
+    }
+  }
 }
