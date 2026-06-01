@@ -14,6 +14,8 @@
       "QP LTE Radio"
     ],
     "tags": [
+      "CBRS",
+      "4G LTE",
       "Indoor",
       "Walking"
     ]
@@ -33,6 +35,8 @@
       "QP LTE PDSCH"
     ],
     "tags": [
+      "CBRS",
+      "4G LTE",
       "Indoor",
       "Walking"
     ]
@@ -52,6 +56,8 @@
       "QP LTE PUSCH"
     ],
     "tags": [
+      "CBRS",
+      "4G LTE",
       "Indoor",
       "Walking"
     ]
@@ -71,6 +77,8 @@
       "QP NR Radio"
     ],
     "tags": [
+      "CBRS",
+      "5G NR",
       "Indoor",
       "Walking"
     ]
@@ -90,6 +98,8 @@
       "QP NR PDSCH"
     ],
     "tags": [
+      "CBRS",
+      "5G NR",
       "Indoor",
       "Walking"
     ]
@@ -109,6 +119,8 @@
       "QP NR PUSCH"
     ],
     "tags": [
+      "CBRS",
+      "5G NR",
       "Indoor",
       "Walking"
     ]
@@ -128,6 +140,8 @@
       "QP NR Radio"
     ],
     "tags": [
+      "CBRS",
+      "5G NR",
       "Outdoor",
       "Walking"
     ]
@@ -147,6 +161,8 @@
       "QP NR PDSCH"
     ],
     "tags": [
+      "CBRS",
+      "5G NR",
       "Outdoor",
       "Walking"
     ]
@@ -166,6 +182,8 @@
       "QP NR PUSCH"
     ],
     "tags": [
+      "CBRS",
+      "5G NR",
       "Outdoor",
       "Walking"
     ]
