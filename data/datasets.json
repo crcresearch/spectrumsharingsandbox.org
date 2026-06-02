@@ -1,8 +1,8 @@
 [
   {
     "title": "CBRS Fitz Indoor - LTE Radio",
-    "desc": "Notre Dame Campus Indoor measurements - Celona CBRS Fitz Indoor CBSDs - QualiPoc LTE Radio CSV",
-    "full_data_desc": "Walking measurements conducted from 20250922 to 20260324. This data upload contains QualiPoc CSVs for 4G LTE Radio (connected) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
+    "desc": "Notre Dame Campus Indoor measurements - Fitz Indoor CBSDs - QualiPoc LTE Radio CSV",
+    "full_data_desc": "Walking measurements conducted from 2025/09/22 to 2026/03/24. This data upload contains QualiPoc CSVs for 4G LTE Radio (connected) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
     "link": "https://drive.google.com/file/d/1uv0TXRiwJVeTTGS83x_PtiX0KMP_zvss",
     "date_ranges": [
       {
@@ -22,8 +22,8 @@
   },
   {
     "title": "CBRS Fitz Indoor - LTE PDSCH",
-    "desc": "Notre Dame Campus Indoor measurements - Celona CBRS Fitz Indoor CBSDs - QualiPoc LTE PDSCH\nCSV",
-    "full_data_desc": "Walking measurements conducted from 20250922 to 20260324. This data upload contains QualiPoc CSVs for 4G LTE PDSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
+    "desc": "Notre Dame Campus Indoor measurements - Fitz Indoor CBSDs - QualiPoc LTE PDSCH\nCSV",
+    "full_data_desc": "Walking measurements conducted from 2025/09/22 to 2026/03/24. This data upload contains QualiPoc CSVs for 4G LTE PDSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
     "link": "https://drive.google.com/file/d/1iVcEPVkEXVL4i8XthKQsHNmnFU43g3D9",
     "date_ranges": [
       {
@@ -43,8 +43,8 @@
   },
   {
     "title": "CBRS Fitz Indoor - LTE PUSCH",
-    "desc": "Notre Dame Campus Indoor measurements - Celona CBRS Fitz Indoor CBSDs - QualiPoc LTE PUSCH\nCSV",
-    "full_data_desc": "Walking measurements conducted from 20250922 to 20260324. This data upload contains QualiPoc CSVs for 4G LTE PUSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
+    "desc": "Notre Dame Campus Indoor measurements - Fitz Indoor CBSDs - QualiPoc LTE PUSCH\nCSV",
+    "full_data_desc": "Walking measurements conducted from 2025/09/22 to 2026/03/24. This data upload contains QualiPoc CSVs for 4G LTE PUSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
     "link": "https://drive.google.com/file/d/14byHMGZ0GrS-yaUad7eDxhz6bIZcWTnl",
     "date_ranges": [
       {
@@ -64,8 +64,8 @@
   },
   {
     "title": "CBRS Fitz Indoor - NR Radio",
-    "desc": "Notre Dame Campus Indoor measurements - Celona CBRS Fitz Indoor CBSDs - QualiPoc NR Radio\nCSV",
-    "full_data_desc": "Walking measurements conducted from 20250922 to 20260324. This data upload contains QualiPoc CSVs for 5G NR Radio (connected) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
+    "desc": "Notre Dame Campus Indoor measurements - Fitz Indoor CBSDs - QualiPoc NR Radio\nCSV",
+    "full_data_desc": "Walking measurements conducted from 2025/09/22 to 2026/03/24. This data upload contains QualiPoc CSVs for 5G NR Radio (connected) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
     "link": "https://drive.google.com/file/d/10hYPmRImnkCHo5_dzml-WqSRWKCnVKJL",
     "date_ranges": [
       {
@@ -85,8 +85,8 @@
   },
   {
     "title": "CBRS Fitz Indoor - NR PDSCH",
-    "desc": "Notre Dame Campus Indoor measurements - Celona CBRS Fitz Indoor CBSDs - QualiPoc NR PDSCH\nCSV",
-    "full_data_desc": "Walking measurements conducted from 20250922 to 20260324. This data upload contains QualiPoc CSVs for 5G NR PDSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
+    "desc": "Notre Dame Campus Indoor measurements - Fitz Indoor CBSDs - QualiPoc NR PDSCH\nCSV",
+    "full_data_desc": "Walking measurements conducted from 2025/09/22 to 2026/03/24. This data upload contains QualiPoc CSVs for 5G NR PDSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
     "link": "https://drive.google.com/file/d/1PghYu0hZlMnGQSWoUqjvWx9YdOObHEfq",
     "date_ranges": [
       {
@@ -106,8 +106,8 @@
   },
   {
     "title": "CBRS Fitz Indoor - NR PUSCH",
-    "desc": "Notre Dame Campus Indoor measurements - Celona CBRS Fitz Indoor CBSDs - QualiPoc NR PUSCH\nCSV",
-    "full_data_desc": "Walking measurements conducted from 20250922 to 20260324. This data upload contains QualiPoc CSVs for 5G NR PUSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
+    "desc": "Notre Dame Campus Indoor measurements - Fitz Indoor CBSDs - QualiPoc NR PUSCH\nCSV",
+    "full_data_desc": "Walking measurements conducted from 2025/09/22 to 2026/03/24. This data upload contains QualiPoc CSVs for 5G NR PUSCH (per-carrier) measurements.\n\nNotes:\n- There are multiple 'Collection' in the CSV for which the measurements were aimed at debugging issues within the network operation, rather than benchmarking performance.\n- Please ensure that the 'Data Technology' column reflects the correct technology for analysis (there are rare instances in which 'Data Technology' reported 'Wi-Fi').\n- The 'Operator' column gives an idea of which SIM was used for the measurements.",
     "link": "https://drive.google.com/file/d/1OrzHxlbNjgqdFKT2891RTdPqCw_pjIdg",
     "date_ranges": [
       {
@@ -127,8 +127,8 @@
   },
   {
     "title": "CBRS Outdoor - NR Radio",
-    "desc": "Notre Dame Campus Outdoor measurements - Celona CBRS Outdoor CBSDs - QualiPoc Radio CSV",
-    "full_data_desc": "Walking measurements conducted from 20260414 to 20260508. This data upload contains QualiPoc CSVs for 5G NR Radio (connected) measurements.",
+    "desc": "Notre Dame Campus Outdoor measurements - Outdoor CBSDs - QualiPoc Radio CSV",
+    "full_data_desc": "Walking measurements conducted from 2026/04/14 to 2026/05/08. This data upload contains QualiPoc CSVs for 5G NR Radio (connected) measurements.",
     "link": "https://drive.google.com/file/d/1_Ct49OO8SMCZ9Q0SurYXAL3uDems8rXr",
     "date_ranges": [
       {
@@ -148,8 +148,8 @@
   },
   {
     "title": "CBRS Outdoor - NR PDSCH",
-    "desc": "Notre Dame Campus Outdoor measurements - Celona CBRS Outdoor CBSDs - QualiPoc PDSCH CSV",
-    "full_data_desc": "Walking measurements conducted from 20260414 to 20260508. This data upload contains QualiPoc CSVs for 5G NR PDSCH (per-carrier) measurements.",
+    "desc": "Notre Dame Campus Outdoor measurements - Outdoor CBSDs - QualiPoc PDSCH CSV",
+    "full_data_desc": "Walking measurements conducted from 2026/04/14 to 2026/05/08. This data upload contains QualiPoc CSVs for 5G NR PDSCH (per-carrier) measurements.",
     "link": "https://drive.google.com/file/d/1_OYxbI91TYENoMu8ptYsrHjb5AIRYjQZ",
     "date_ranges": [
       {
@@ -169,8 +169,8 @@
   },
   {
     "title": "CBRS Outdoor - NR PUSCH",
-    "desc": "Notre Dame Campus Outdoor measurements - Celona CBRS Outdoor CBSDs - QualiPoc PUSCH CSV",
-    "full_data_desc": "Walking measurements conducted from 20260414 to 20260508. This data upload contains QualiPoc CSVs for 5G NR PUSCH (per-carrier) measurements.",
+    "desc": "Notre Dame Campus Outdoor measurements - Outdoor CBSDs - QualiPoc PUSCH CSV",
+    "full_data_desc": "Walking measurements conducted from 2026/04/14 to 2026/05/08. This data upload contains QualiPoc CSVs for 5G NR PUSCH (per-carrier) measurements.",
     "link": "https://drive.google.com/file/d/1uuNasiNqaZ1BR6U12lpt0FvHg8LD8HYJ",
     "date_ranges": [
       {
